@@ -6,7 +6,7 @@ public class sumaMain {
 		// TODO Auto-generated method stub
 		String Num1 = JOptionPane.showInputDialog("Digitar el primer numero");
 		int num1 = Integer.parseInt(Num1);
-		String Num2 = JOptionPane.showInputDialog("Digitar el segundo numero");
+		String Num2 = JOptionPane.showInputDialog("Digitar el segundo numero para la suma");
 		int num2 = Integer.parseInt(Num2);
 		int suma = num1 + num2;
 		
