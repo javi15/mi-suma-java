@@ -1,0 +1,46 @@
+﻿
+@model DetallesDBContext.Factura
+ 
+@{
+    DetallesDBContext.DetallesDBDataContext db = new DetallesDBContext.DetallesDBDataContext();
+    ViewBag.Title = "Create";
+
+    double? count2 = (from cartItems in db.Listas
+                      where cartItems.IDConstante == "CostText"
+                      select (double?)cartItems.Venta).Sum();
+}
+
+<h2>Create</h2>
+<br />
+@*<button type="button" class="btn btn-default btn-lg" id="btnPrint" onclick="PrintElem('#factura')" style="margin-left:40px">
+    <span class="glyphicon glyphicon-print" aria-hidden="true"></span> Guardar
+</button>*@
+
+
+@{Html.RenderAction("MyModal", "Facturas");}
+
+@{Html.RenderAction("IndexParcial", "Facturas");}
+
+
+
+<div >
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@*<script>
+    $('#son').ready(function () {
+        var a = $('#total').val();
+        $.ajax({
+            url: "@Url.Action("SecondAjax", "Facturas")",
+            type: "GET",
+        data: { a: a.valueOf() },
+        success: function (response) {           
+            
+            $("#son").val(response);
+
+        },
+        error: function (response) {
+            alert(response);
+        }
+    });
+    });
+</script>*@
